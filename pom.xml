@@ -14,5 +14,22 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.example.dep</groupId>
+      <artifactId>demo-dep</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>i835864-release</id>
+      <url>https://packagecloud.io/i835864/release/maven2</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>
