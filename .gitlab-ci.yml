@@ -41,12 +41,12 @@ deploy:
   services:
     - docker:dind
   script:
-    - docker build -t demo-app .
-    - docker login registry.gitlab.com
-    - docker push demo-app
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push $CI_REGISTRY_IMAGE
 
 run:
-  image: registry.gitlab.com/demo-app
+  image: $CI_REGISTRY_IMAGE
   stage: run
   script:
     - java -jar demo-app-1.0-jar-with-dependencies.jar
