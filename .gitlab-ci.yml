@@ -24,7 +24,19 @@ test:
   script:
     - mvn $MAVEN_CLI_OPTS test
 
+deploy:
+  image: docker:latest
+  variables:
+    DOCKER_DRIVER: overlay
+  services:
+    - docker:dind
+  script:
+    - docker build -t demo-app .
+    - docker login registry.gitlab.com
+    - docker push demo-app
+
 run:
+  image: 
   stage: run
   script:
     - mvn $MAVEN_CLI_OPTS package
