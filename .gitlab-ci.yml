@@ -49,4 +49,4 @@ run:
   image: $CI_REGISTRY_IMAGE
   stage: run
   script:
-    - java -jar demo-app-1.0-jar-with-dependencies.jar
+    - java -jar /app/demo-app-1.0-jar-with-dependencies.jar
