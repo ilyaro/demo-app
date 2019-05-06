@@ -1,3 +1,3 @@
 # README 
 
-Demo Maven application
+Demo Maven-Gitlab application
